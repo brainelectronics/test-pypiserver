@@ -1,0 +1,3 @@
+# created files based on README examples
+data/*
+.htpasswd
