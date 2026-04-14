@@ -17,6 +17,15 @@ r"^\#\# \[\d{1,}[.]\d{1,}[.]\d{1,}\] \- \d{4}\-\d{2}-\d{2}$"
 -->
 
 ## Released
+## [0.2.0] - 2026-04-14
+### Added
+- [`.yamllint`](.yamllint) and [`.pre-commit-config.yaml`](.pre-commit-config.yaml) files
+
+### Changed
+- Update `pypiserver` to `v2.4`
+- Fix yamllint suggestions
+- Update root [`README`](README.md) with helpful PyPI server endpoint links
+
 ## [0.1.0] - 2022-10-22
 ### Added
 - This changelog file
@@ -26,8 +35,9 @@ r"^\#\# \[\d{1,}[.]\d{1,}[.]\d{1,}\] \- \d{4}\-\d{2}-\d{2}$"
 - Initial root [`README`](README.md)
 
 <!-- Links -->
-[Unreleased]: https://github.com/brainelectronics/test-pypiserver/compare/0.1.0...main
+[Unreleased]: https://github.com/brainelectronics/test-pypiserver/compare/0.2.0...main
 
+[0.2.0]: https://github.com/brainelectronics/test-pypiserver/tree/0.2.0
 [0.1.0]: https://github.com/brainelectronics/test-pypiserver/tree/0.1.0
 
 <!-- [ref-issue-1]: https://github.com/brainelectronics/test-pypiserver/issues/1 -->

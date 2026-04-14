@@ -11,23 +11,23 @@ PyPi Server for testing and deploy of MicroPython packages
 <!-- MarkdownTOC -->
 
 - [Installation](#installation)
-	- [Install required tools](#install-required-tools)
-		- [Python](#python)
-		- [Docker Compose](#docker-compose)
-		- [htpasswd](#htpasswd)
+  - [Install required tools](#install-required-tools)
+    - [Python](#python)
+    - [Docker Compose](#docker-compose)
+    - [htpasswd](#htpasswd)
 - [Setup](#setup)
-	- [Directories](#directories)
-	- [Password file](#password-file)
-	- [pypirc file](#pypirc-file)
+  - [Directories](#directories)
+  - [Password file](#password-file)
+  - [pypirc file](#pypirc-file)
 - [Usage](#usage)
-	- [Start PyPi server](#start-pypi-server)
-	- [Upload](#upload)
-	- [Download](#download)
-		- [Python](#python-1)
-		- [MicroPython](#micropython)
-			- [Connect to a network](#connect-to-a-network)
-			- [Install latest package version](#install-latest-package-version)
-			- [Install specific package version](#install-specific-package-version)
+  - [Start PyPi server](#start-pypi-server)
+  - [Upload](#upload)
+  - [Download](#download)
+    - [Python](#python-1)
+    - [MicroPython](#micropython)
+      - [Connect to a network](#connect-to-a-network)
+      - [Install latest package version](#install-latest-package-version)
+      - [Install specific package version](#install-specific-package-version)
 - [Credits](#credits)
 
 <!-- /MarkdownTOC -->
@@ -121,9 +121,9 @@ Run the following command in the directory of the `docker-compose.yml` file
 docker compose up
 ```
 
-The PyPi server will be available on `http://localhost:8089`. The port `8089`
-is choosen as maybe other web servers or services are already running on the
-system and using the general default port `8080`.
+The PyPi server will be available on [http://localhost:8089](http://localhost:8089/).
+The port `8089` is choosen as maybe other web servers or services are already
+running on the system and using the general default port `8080`.
 
 ### Upload
 
@@ -138,6 +138,12 @@ twine upload --repository http://localhost:8089 path/to/my-custom-package.tar.gz
 ```
 
 ### Download
+
+An overview of all available packages on the PyPi server is available at
+[http://localhost:8089/packages](http://localhost:8089/packages).
+All available versions of a package are provided as JSON at
+`http://localhost:8089/<PACKAGE_NAME>/json`
+
 #### Python
 
 ```bash
@@ -178,7 +184,7 @@ course the uploaded packages.
 ```
 
 MicroPython will [get this JSON][ref-upy-get-package-data] and install either
-the latest version, taken specified by `['info']['version']` and then looked
+the latest version, taken as specified by `['info']['version']` and then looked
 up in `['releases'][VERSION]` or from a specific version. In either case the
 `url` value of the specified release will be used to download the archive file.
 

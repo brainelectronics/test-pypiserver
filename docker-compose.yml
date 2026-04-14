@@ -1,8 +1,10 @@
+---
+
 version: '3.8'
 
 services:
   pypi-server:
-    image: pypiserver/pypiserver:v1.5.1
+    image: pypiserver/pypiserver:v2.4
     restart: unless-stopped
     ports:
       # PyPi server is available at http://localhost:8089 to avoid conflicts
@@ -14,5 +16,10 @@ services:
       - $PWD/data/auth:/data/auth
     # require a authentication on uploading/updating packages
     # use "/data/auth/.htpasswd" as lookup for passwords
-    # do not forward to real PyPI index if packages are not found in the local index
-    command: run --passwords /data/auth/.htpasswd --authenticate update --disable-fallback -vvv
+    # do not forward to real PyPI index if packages are not found in this index
+    command: >
+      run
+      --passwords /data/auth/.htpasswd
+      --authenticate update
+      --disable-fallback
+      -vvv
