@@ -1,0 +1,16 @@
+---
+
+# To install pre-commit hooks, install `pre-commit` and activate it here:
+#     pip3 install pre-commit
+#     pre-commit install
+#
+# Run the hooks on all files with
+# 'pre-commit run --all'
+#
+
+repos:
+  - repo: https://github.com/adrienverge/yamllint.git
+    rev: v1.38.0
+    hooks:
+      - id: yamllint
+        args: [--strict, -c=.yamllint]
