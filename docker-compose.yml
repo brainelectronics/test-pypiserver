@@ -4,7 +4,7 @@ version: '3.8'
 
 services:
   pypi-server:
-    image: pypiserver/pypiserver:v1.5.1
+    image: pypiserver/pypiserver:v2.4
     restart: unless-stopped
     ports:
       # PyPi server is available at http://localhost:8089 to avoid conflicts
